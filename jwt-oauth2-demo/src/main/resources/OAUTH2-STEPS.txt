@@ -1,0 +1,1 @@
+http://127.0.0.1:8080/oauth2/authorize?response_type=code&client_id=hsbc-client&scope=read&redirect_uri=http://127.0.0.1:8080/authorized

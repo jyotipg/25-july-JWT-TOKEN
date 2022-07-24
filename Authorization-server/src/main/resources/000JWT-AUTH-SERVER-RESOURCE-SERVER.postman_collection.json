@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "4e7ab63a-367e-407b-a5e8-e5d5453f286c",
+		"name": "000JWT-AUTH-SERVER-RESOURCE-SERVER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AUTH-TOKEN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "message:read",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "messaging-client:secret@localhost:9000/oauth2/token",
+					"auth": {
+						"user": "messaging-client",
+						"password": "secret"
+					},
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RESOURCE-SERVER",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJraWQiOiI1MGJiYjMyNS1mNDFkLTRkNmMtOGY1ZC05OGYxYWNhYTkxNjYiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJtZXNzYWdpbmctY2xpZW50IiwiYXVkIjoibWVzc2FnaW5nLWNsaWVudCIsIm5iZiI6MTY1ODUxMDEyNiwic2NvcGUiOlsibWVzc2FnZTpyZWFkIl0sImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo5MDAwIiwiZXhwIjoxNjU4NTEwNDI2LCJpYXQiOjE2NTg1MTAxMjZ9.UUhg3j2z-rjMNocscKPNSsHpOo02_R9qNxgft6_q1ERd47Px2SinsF3wX17qIXkU3irZ2j46p2O0AAJi3VrPm3OsCQh-LlNdyXOPQ489sSTchhpIgmwBYeT_ntJMt4MOaCzo4v5fUcRd56dhmKPKsJIqja8Jmu5YfQVza3K1_gY018z3E7VMAd2D2gBkAsfLlwT4jEPz5hiPUfLsvZV0hfq8Q5z6hpxlO7qvVxS39emLv17ooglJpVHEjFsCJYoNbF159QcxX3NygxqZsF_O_gp05LMIf2d0Zv2tjI0rrJ7yUpN7xqlBCnnZqJm1iBm_S46fkLDMmTV8A1TSqXEreQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/message",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"message"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

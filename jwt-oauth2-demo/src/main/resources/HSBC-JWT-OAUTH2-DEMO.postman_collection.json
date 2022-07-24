@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "71ce3cf6-330e-4755-a00b-8d596c3a745b",
+		"name": "HSBC-JWT-OAUTH2-DEMO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "OAUTH-JWT-TOKEN",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "secret",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "messaging-client",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "grant_type",
+							"value": "authorization_code",
+							"type": "text"
+						},
+						{
+							"key": "code",
+							"value": "qXQyF-0FJcq0N4sTYQJ1N8x6oT6cNvtmUUiwCbhSAsegV2LAnypGerXTOYFn73H-yCN3GLoYJOhmmRDPRzsqYZYK3RRGefi8igulr4ILyziPzX01lfMaxt7H0483qGoy",
+							"type": "text"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "http://127.0.0.1:8080/authorized",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8080/oauth2/token",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8080",
+					"path": [
+						"oauth2",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

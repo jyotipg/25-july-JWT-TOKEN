@@ -1,0 +1,14 @@
+https://github.com/spring-projects/spring-security-samples
+
+https://github.com/spring-projects/spring-security-samples/tree/main/servlet/spring-boot/java/oauth2/authorization-server
+
+
+curl -X POST messaging-client:secret@localhost:9000/oauth2/token -d "grant_type=client_credentials" -d "scope=message:read"
+
+
+
+
+curl -X POST messaging-client:secret@localhost:9000/oauth2/introspect -d "token=eyJraWQiOiIzN2RlNmMyZi1kOWNhLTRiNDQtYjdjMy0zMzE5NGI4ZGM3YjkiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJtZXNzYWdpbmctY2xpZW50IiwiYXVkIjoibWVzc2FnaW5nLWNsaWVudCIsIm5iZiI6MTY1ODUwMjU2Mywic2NvcGUiOlsibWVzc2FnZTpyZWFkIl0sImlzcyI6Imh0dHA6XC9cL2xvY2FsaG9zdDo5MDAwIiwiZXhwIjoxNjU4NTAyODYzLCJpYXQiOjE2NTg1MDI1NjN9.DvMkalevALqIQUe96Jw2_MZYfpoDLx5VfhS9HpUS2TctLYcWIluFxnMVWSogBPKLIJ7kluGtcqg7oCpneM6Y0JBH2lN-vMbpY-0sOR6szRlOUt2ayX2UM8HcCsaueD6gr0hq2CXMDUFMioB_xB9aIYutjGxgopvwIe6Yc_h9bJiGe6iX53U71xqr1354oZ3tbSEob_4uyTXWz3QlgthlmBqTxDHGnNq6KO7eEwbWrwuEgAkLFcw-HMyaY13n5ZHwvgolPRRseEOPMHJFWq2Risz_TDx32bRX6G90Qq_aVSRvZI6rXvqG9XjueBgPOInLexNTnhOeIiDwsFydGmsmhA"
+
+
+OTHER LINKS :--> https://github.com/spring-projects/spring-security/tree/main/oauth2

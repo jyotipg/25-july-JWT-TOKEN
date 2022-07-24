@@ -1,0 +1,55 @@
+Hi All,
+
+As per requirement, i have successfully created Authorization Server using below latest dependencies.
+
+configurations 
+1. spring-boot-starter-parent 			[Version 2.7.0 ]
+2. spring-security-oauth2-authorization-server [Version 0.3.0 ]
+
+Development Steps 
+I have created SecurityConfig.java file and initialized required beans with below configurations.
+
+1. implemented "server filter chain" to handle / verify authenticated login.
+2. for time being, have implemented In Memory user Detail Service  
+3. Registered the Client Repository with (CLIENT_SECRET_BASIC, AUTHORIZATION_CODE, CLIENT_CREDENTIALS) support.
+4. Configured JWKSource with (RSAPublicKey & RSAPrivateKey) by creating generateed RSA Key.
+5. for JWT Token have implemented ProviderSettings.
+
+
+Process :
+
+1. Started applicaiton on port (8080)
+2. then execute the below url on browser
+URL :--> http://127.0.0.1:8080/oauth2/authorize?response_type=code&client_id=hsbc-client&scope=read&redirect_uri=http://127.0.0.1:8080/authorized
+
+3. you will get login screen
+4. then you provide the login creditionals
+5. then you will ask for "Consent required" you select the "SCOPE" and just hit the "SUBMIT CONSENT" button.
+6. then you will get authorized code
+Example :-->  http://127.0.0.1:8080/authorized?code=kB5x1152u6VtrzJgGOdUH7PahJQjZDVVbphovRnA4LM_rthDkBCszHJWMJcpCsARFViQVtQ7UuSxYxFZZivcGf5zNxiGfRCBxP0h_4b5dE9QoDKPLvAV2T3KdL6HKN5p
+
+
+HOW TO GET JWT TOKEN
+
+1. Open the POSTMAN and create the POST endpoint
+Endpoint :-- > http://127.0.0.1:8080/oauth2/token
+2. set [Basic Auth Authorization] :--  {"Username" : "hsbc-client", "Password":"secret"}
+3. set [form-data] as Body
+   a) grant_type 	:-- authorization_code
+   b) code 	  	:-- set the authorized code
+   c) redirect_uri  	:-- http://127.0.0.1:8080/authorized
+4. you will get JWT token , Referesh Token , Scope, token type & token expired Time.   
+
+
+Thanks & Regards 
+Jyoti.
+   
+
+    
+
+
+
+ 
+
+
+
